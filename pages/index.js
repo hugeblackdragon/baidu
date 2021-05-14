@@ -1,3 +1,5 @@
+import Head from 'next/head'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import Detail from '../components/detail.js'
 import Search from '../components/search'
@@ -13,7 +15,7 @@ export default function Home({ allPostsData }) {
   });
 
   const [num,setNum] = useState(4);
-
+  //滚动判断函数
   function scb(){
     let st = Math.max(document.documentElement.scrollTop,document.body.scrollTop);
     let ch = document.documentElement.clientHeight
@@ -24,7 +26,6 @@ export default function Home({ allPostsData }) {
     if(st + ch +2>sh) {
         setNum(num+4);
         console.log(num);
-           //这里进行修改成请求数据
         }
     }
 
@@ -44,16 +45,21 @@ export default function Home({ allPostsData }) {
   );
 
   return (
+    <html lang="zh">
+      <Head>
+        <title>百度一下，你就知道</title>
+        <meta name="keywords" content="HTML,CSS,Baidu" />
+        <meta name="description" content="A copy of baidu" />
+      </Head> 
     <div className={styles.container}>
       <Fixheader></Fixheader>
       <div className={styles.tou}>
         <Detail></Detail>
         <div className={styles.show}>
-        <img src='static/img/1.gif' />
+        <img src='static/img/1.gif' alt='百度标志' />
         <Search></Search>
         </div>
       </div>
-      
     <div className={styles.content}>
     <div className={styles.left}>
       <ul className={styles.ul}>
@@ -75,9 +81,11 @@ export default function Home({ allPostsData }) {
       {state.list.map((i) => {
           return (
             <li className={styles.li_2}>
+              <Link href="/">
               <a className={styles.a}>
               {i.title}
               </a>
+              </Link>
               <div className={styles.amount}>
               {i.amount}
               </div>
@@ -88,6 +96,7 @@ export default function Home({ allPostsData }) {
       </div>
     </div>
     </div>
+    </html>
   )
 }
 

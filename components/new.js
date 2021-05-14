@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function New(props){
     return(
         <li className={styles.new}>
-        <img src={props.img}  className={styles.img}/>
+        <img src={props.img} alt='新闻配图' className={styles.img}/>
         <div className={styles.container}>
         <Link href={`/${props.id}`}>
         <a className={styles.title}>{props.title}</a>

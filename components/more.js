@@ -1,4 +1,5 @@
 import styles from './more.module.css'
+import Link from 'next/link'
 
 export default function More(){
     return(
@@ -13,7 +14,7 @@ export default function More(){
         <li>更换皮肤</li>
         </div>
          </ul>
-        <a className={styles.button}>登录</a>
+        <Link href="/"><a className={styles.button}>登录</a></Link>
     </div>
     )
 }

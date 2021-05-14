@@ -1,0 +1,73 @@
+.container{
+  position:relative;
+}
+
+.tou{
+  position:relative;
+  width:1465px;
+  z-index:2;
+}
+
+.show{
+  position:relative;
+  background: white;
+  text-align:center;
+  z-index:2;
+}
+
+.content{
+  z-index:0;
+  position:relative;
+
+}
+
+.left{
+  position:relative;
+  top:50px;
+  left:150px;
+  width:700px;
+}
+
+.li{
+  float:left;
+    padding:0 10px 0 10px;
+    list-style:none;
+    color:gray;
+}
+
+.li_2{
+  list-style:decimal;
+  position:relative;
+  margin:10px 0;
+  left:-20px;
+}
+
+.ul{
+  height:20px;
+  display:block;
+}
+
+.right{
+  position:absolute;
+  top:60px;
+  left:900px;
+  width:400px;
+}
+
+.change{
+  position:absolute;
+  top:0;
+  right:0;
+  color:gray;
+}
+
+.a:hover{
+  color:rgb(65, 90, 192);
+}
+
+.amount{
+  color:gray;
+  position:absolute;
+  right:0;
+  top:0px;
+}

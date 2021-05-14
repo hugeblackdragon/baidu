@@ -1,0 +1,36 @@
+.front{
+    position:absolute;
+    top:80px;
+    width:100%;
+    background: rgb(233, 233, 233);
+}
+
+.haha{
+    margin:0 auto;
+    width:1000px;
+    height:200px;
+}
+
+.img{
+    width:40px;
+    border-radius: 9999px;
+}
+
+.plus{
+    position:relative;
+    top:-45px;
+    left:40px;
+
+}
+
+.time{
+    color:gray
+}
+
+.content{
+    position: absolute;
+    top:300px;
+    left:230px;
+    width:700px;
+    border-right: 1px solid black;
+}

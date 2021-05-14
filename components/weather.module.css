@@ -1,0 +1,50 @@
+
+.img{
+    height:20px;
+    position:relative;
+    top:3px;
+    padding:0 10px 0 10px;
+}
+
+.container:hover .wea_container{
+    display:block;
+}
+
+.wea_container{
+    display: none;
+    position:relative;
+    left:-230px;
+    border:1px solid black;
+    height:200px;
+    width:500px;
+    border-radius:10px;
+    background: white;
+    z-index:3;
+}
+
+
+.blue{
+    color:blue;
+    padding:20px;
+}
+
+.gray{
+    color:gray;
+    padding:20px;
+}
+
+.future{
+    position:relative;
+    top:0px;
+    width:500px;
+    height:160px;
+}
+
+.future div{
+    float:left;
+    font-size: 10px;
+    width:100px;
+    height:160px;
+    padding:30px 0 0 0;
+    text-align: center;
+}

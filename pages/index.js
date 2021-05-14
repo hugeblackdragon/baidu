@@ -13,7 +13,10 @@ export default function Home({ allPostsData }) {
   const [state, setState] = useState({
     list: [],
   });
-
+  const [showResults, setShowResults] = React.useState(0)
+    const onClick0 = () => setShowResults(0)
+    const onClick1 = () => setShowResults(1)
+    const onClick2 = () => setShowResults(2)
   const [num,setNum] = useState(4);
   //滚动判断函数
   function scb(){
@@ -23,7 +26,7 @@ export default function Home({ allPostsData }) {
     console.log(st);
     console.log(ch);
     console.log(sh);
-    if(st + ch +2>sh) {
+    if(st + ch +2>sh &&showResults==0) {
         setNum(num+4);
         console.log(num);
         }
@@ -63,18 +66,35 @@ export default function Home({ allPostsData }) {
     <div className={styles.content}>
     <div className={styles.left}>
       <ul className={styles.ul}>
-        <li className={styles.li}>我的关注</li>
-        <li className={styles.li}>推荐</li>
-        <li className={styles.li}>导航</li>
+        <li onClick={onClick1} className={styles.li} style={showResults == 1 ? {color: 'black' } : { }}>我的关注</li>
+        <li onClick={onClick0} className={styles.li} style={showResults == 0 ? {color: 'black' } : { }}>推荐</li>
+        <li onClick={onClick2} className={styles.li} style={showResults == 2 ? {color: 'black' } : { }}>导航</li>
       </ul>
-      <ul>
+      <ul style={showResults == 0 ? {  } : { display: 'none' }}>
       {allPostsData.slice(0,num).map(({ id,date, title,author,o_img }) => (
             <New id={id} img={o_img} title={title} author={author} time={date}
             ></New>
           ))}
       </ul>
+      <div className={styles.left2} style={showResults == 1 ? {  } : { display: 'none' }}>
+        <div className={styles.inner}>
+         我的导航
+        <div>
+          <span className={styles.plus}>+</span>添加导航
+        </div>
+        </div>
+        <div className={styles.out}>
+        <span className={styles.plus2}>+</span>自定义
+        </div>
+      </div>
+      <div className={styles.left3}  style={showResults == 2 ? {  } : { display: 'none' }}>
+        <div>
+        <img src="static/img/6.png" className={styles.img} alt="外部网站" />
+         hao123
+         </div>
+      </div>
     </div>
-    <div className={styles.right}>
+    <div className={styles.right} style={showResults == 0 ? {  } : { display: 'none' }}>
       百度热榜 
       <div className={styles.change}>换一换</div>
       <ul>
